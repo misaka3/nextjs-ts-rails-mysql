@@ -23,7 +23,7 @@ services:
       - "3306:3306"
   front:
     build: ./frontend/
-    # command: yarn start
+    command: yarn dev
     volumes:
       - ./frontend/app:/front
     ports:
