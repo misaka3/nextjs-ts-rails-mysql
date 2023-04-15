@@ -2,7 +2,9 @@ FROM node:lts-slim
 
 WORKDIR /front
 COPY app/package.json ./
-COPY app/package-lock.json ./
-RUN npm install
+COPY app/yarn.lock ./
+RUN yarn install
 
 ENV CI=true
+
+COPY . .
