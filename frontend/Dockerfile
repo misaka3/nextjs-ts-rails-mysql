@@ -1,10 +1,10 @@
 FROM node:lts-slim
 
+WORKDIR /front
+
 RUN apt-get update && \
     apt-get install -y curl && \
     npm install yarn
-
-WORKDIR /front
 
 COPY app/package.json ./
 COPY app/yarn.lock ./
